@@ -7,12 +7,6 @@
 
 #include "ServoController.h"
 
-ServoController::ServoController()
-{
-  // TODO Auto-generated constructor stub
-
-}
-
 ServoController::~ServoController()
 {
   // TODO Auto-generated destructor stub

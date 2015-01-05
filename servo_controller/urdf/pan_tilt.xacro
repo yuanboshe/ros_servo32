@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<robot name="pan_tilt"
+  xmlns:xacro="http://ros.org/wiki/xacro">
+  <property name="M_PI" value="3.14159"/>
+  
+  <link name="head_base_link" />
+  
+  <!-- fake head_pan_link joint -->
+  <link name="head_pan_link" />
+  <joint name="head_pan_joint" type="revolute">
+    <origin xyz="0 0 0" rpy="0 ${M_PI/2} ${M_PI/2}" />
+    <parent link="head_base_link"/>
+    <axis xyz="0 0 -1"/>
+    <limit effort="30" velocity="1.0" lower="-1.5" upper="1.5" />
+    <child link="head_pan_link" />
+  </joint>
+  
+  <!-- fake head_tilt_link joint -->
+  <link name="head_tilt_link" />
+  <joint name="head_tilt_joint" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 ${M_PI}" />
+    <parent link="head_pan_link"/>
+    <axis xyz="0 0 -1"/>
+    <limit effort="30" velocity="1.0" lower="-1.5" upper="1.5" />
+    <child link="head_tilt_link" />
+  </joint>
+</robot>

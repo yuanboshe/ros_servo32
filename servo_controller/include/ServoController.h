@@ -16,7 +16,6 @@
 class ServoController
 {
 public:
-  ServoController();
   virtual ~ServoController();
   std::map<std::string, int> nameMap;
   std::map<std::string, int> posMap;

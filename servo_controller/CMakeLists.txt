@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(ros_servo32)
+project(servo_controller)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -83,7 +83,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-#  LIBRARIES ros_servo32
+#  LIBRARIES servo_controller
 #  CATKIN_DEPENDS roscpp rospy
 #  DEPENDS system_lib
 )
@@ -101,19 +101,19 @@ include_directories(
 )
 
 ## Declare a cpp library
-# add_library(ros_servo32
-#   src/${PROJECT_NAME}/ros_servo32.cpp
+# add_library(servo_controller
+#   src/${PROJECT_NAME}/servo_controller.cpp
 # )
 
 ## Declare a cpp executable
-# add_executable(ros_servo32_node src/ros_servo32_node.cpp)
+# add_executable(servo_controller_node src/servo_controller_node.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(ros_servo32_node ros_servo32_generate_messages_cpp)
+# add_dependencies(servo_controller_node servo_controller_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(ros_servo32_node
+# target_link_libraries(servo_controller_node
 #   ${catkin_LIBRARIES}
 # )
 add_library(Servo32Sel src/Servo32Sel.cpp)
@@ -139,7 +139,7 @@ target_link_libraries(servo_node ServoController ${catkin_LIBRARIES})
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS ros_servo32 ros_servo32_node
+# install(TARGETS servo_controller servo_controller_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -164,7 +164,7 @@ target_link_libraries(servo_node ServoController ${catkin_LIBRARIES})
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_ros_servo32.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_servo_controller.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
